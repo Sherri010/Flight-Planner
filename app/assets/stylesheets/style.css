@@ -5,7 +5,7 @@ html, body {
   font-family: 'Lato', sans-serif;
 }
 .wrapper{
-  background-image: url(<%= asset_path 'landing.jpg' %>) no-repeat;
+  background-image: url(image_path('landing.jpg'));
   background-size:cover;
   height:100vh;
   margin:0px;
