@@ -24,7 +24,7 @@
       <h4> Profile </h4>
       <div class="row">
        <div class="col s6">
-        <%= image_tag current_user.avatar.url,class:"profile_pic"%>
+              <img src="<%=current_user.image%>" class="profile_pic">
        </div>
        <div class="col s6 user_info">
          <p><strong> Name: </strong><%= current_user.name %> </p>
