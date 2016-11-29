@@ -33,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/map/new-plan");
 });
 
-MapController.$inject = ['$http','$scope'];
+
 ///MAP
 app.controller('MapController', function($scope,$http) {
    $scope.labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -212,6 +212,7 @@ app.controller('MapController', function($scope,$http) {
 
       $scope.$on("flightapp:updatemap_repaint",function(){
           console.log("im in update now,repainting",$scope.coordinates);
+          $scope.labelIndex=0;
           $scope.setMapForAll(map);
           $scope.distances=[0];
           $scope.totalDistance = 0;
