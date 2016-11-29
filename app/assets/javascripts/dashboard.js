@@ -35,7 +35,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 
 ///MAP
-app.controller('MapController', function($scope,$http) {
+app.controller('MapController',[ '$scope','$http' ,function($scope,$http) {
    $scope.labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $scope.labelIndex = 0;
     $scope.marker_list = [];
@@ -255,8 +255,8 @@ app.controller('MapController', function($scope,$http) {
 
     initMap();
 
-});
-MapController.$inject = ['$scope', '$http'];
+}]);
+
 
 //PlanController.$inject = ['$http','$scope'];
 ///Plan
