@@ -289,7 +289,7 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
      {
       $http({
            method: "POST",
-           url: "http://localhost:3000/routes",
+           url: "/routes",
            data: {
                route:{name:$scope.routeName,user_id:user,distance:$scope.totalDistance.toFixed(3)}
            }
@@ -299,7 +299,7 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
             // if success at the nodes to created route
             $http({
                     method: "POST",
-                    url: "http://localhost:3000/routes/"+route_id+"/nodes",
+                    url: "/routes/"+route_id+"/nodes",
                     data: {
                         node:$scope.coordinates
                   }
@@ -353,7 +353,7 @@ app.controller('HistroyController',['$scope','$http',function($scope,$http){
   function getAllRoute(){
   $http({
           method: "GET",
-          url: "http://localhost:3000/routes/",
+          url: "/routes/",
        }).success(function(data) {
            $scope.allRoutes = data;
       }).error(function() {
@@ -365,7 +365,7 @@ app.controller('HistroyController',['$scope','$http',function($scope,$http){
   $scope.getNodes=function(id){
        $http({
             method: "GET",
-            url: "http://localhost:3000/routes/"+id,
+            url: "/routes/"+id,
          }).success(function(data) {
              $scope.nodes = data.nodes;
              var random_color_index=(Math.floor(Math.random() * 6));
@@ -382,7 +382,7 @@ app.controller('HistroyController',['$scope','$http',function($scope,$http){
   $scope.removeRoute=function(id){
     $http({
             method: "DELETE",
-            url: "http://localhost:3000/routes/"+id
+            url: "/routes/"+id
          }).success(function(data) {
             //update the view
             getAllRoute();
