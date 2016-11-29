@@ -336,7 +336,7 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
 
 //HistroyController.$inject = ['$http','$scope'];
 //saved routes
-app.controller('HistroyController',['$http','$scope',function($scope,$http){
+app.controller('HistroyController',['$scope','$http',function($scope,$http){
   $scope.allRoutes;
   $scope.nodes;
   getAllRoute();
@@ -396,7 +396,7 @@ app.controller('HistroyController',['$http','$scope',function($scope,$http){
 //HistroyController.$inject = ['$scope', '$http'];
 //WeatherController.$inject = ['$http','$scope'];
 //WEATHER
-app.controller('WeatherController',['$http','$scope', function($scope,$http) {
+app.controller('WeatherController',['$scope', '$http',function($scope,$http) {
     var api_key = "6ee35593a7e1cb16b96c77a2f62e1211";
     var before_length = $scope.coordinates.length;
     $scope.radius;
