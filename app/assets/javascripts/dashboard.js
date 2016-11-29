@@ -1,7 +1,7 @@
 var app = angular.module("flightApp", ["ui.router"]);
 
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state("map", {
             url: "/map",
@@ -31,7 +31,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
 
     $urlRouterProvider.otherwise("/map/new-plan");
-});
+}]);
 
 
 ///MAP
