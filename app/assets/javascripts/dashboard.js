@@ -260,7 +260,7 @@ app.controller('MapController',[ '$scope','$http' ,function($scope,$http) {
 
 //PlanController.$inject = ['$http','$scope'];
 ///Plan
-app.controller('PlanController', function($scope,$http) {
+app.controller('PlanController',['$http','$scope', function($scope,$http) {
   //getting user
   var user = document.getElementById('user').getAttribute("value");
   $scope.save_flag=false;
@@ -329,14 +329,14 @@ app.controller('PlanController', function($scope,$http) {
     $scope.coordinates.splice(node_index,1);
     $scope.$emit("flightapp:updatemap_repaint");
   }
-});
+}]);
 
-PlanController.$inject = ['$scope', '$http'];
+//PlanController.$inject = ['$scope', '$http'];
 
 
 //HistroyController.$inject = ['$http','$scope'];
 //saved routes
-app.controller('HistroyController',function($scope,$http){
+app.controller('HistroyController',['$http','$scope',function($scope,$http){
   $scope.allRoutes;
   $scope.nodes;
   getAllRoute();
@@ -391,12 +391,12 @@ app.controller('HistroyController',function($scope,$http){
         });
   }
 
-});
+}]);
 
-HistroyController.$inject = ['$scope', '$http'];
+//HistroyController.$inject = ['$scope', '$http'];
 //WeatherController.$inject = ['$http','$scope'];
 //WEATHER
-app.controller('WeatherController', function($scope,$http) {
+app.controller('WeatherController',['$http','$scope', function($scope,$http) {
     var api_key = "6ee35593a7e1cb16b96c77a2f62e1211";
     var before_length = $scope.coordinates.length;
     $scope.radius;
@@ -428,6 +428,6 @@ app.controller('WeatherController', function($scope,$http) {
        }
     }
 
-});
+}]);
 
-WeatherController.$inject = ['$scope', '$http'];
+//WeatherController.$inject = ['$scope', '$http'];
