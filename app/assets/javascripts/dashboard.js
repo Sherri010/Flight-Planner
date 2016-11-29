@@ -257,7 +257,7 @@ app.controller('MapController', function($scope,$http) {
 
 });
 
-PlanController.$inject = ['$http','$scope'];
+//PlanController.$inject = ['$http','$scope'];
 ///Plan
 app.controller('PlanController', function($scope,$http) {
   //getting user
@@ -331,7 +331,7 @@ app.controller('PlanController', function($scope,$http) {
 });
 
 
-HistroyController.$inject = ['$http','$scope'];
+//HistroyController.$inject = ['$http','$scope'];
 //saved routes
 app.controller('HistroyController',function($scope,$http){
   $scope.allRoutes;
@@ -391,7 +391,7 @@ app.controller('HistroyController',function($scope,$http){
 });
 
 
-WeatherController.$inject = ['$http','$scope'];
+//WeatherController.$inject = ['$http','$scope'];
 //WEATHER
 app.controller('WeatherController', function($scope,$http) {
     var api_key = "6ee35593a7e1cb16b96c77a2f62e1211";
