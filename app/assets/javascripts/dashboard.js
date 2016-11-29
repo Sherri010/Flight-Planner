@@ -412,7 +412,7 @@ app.controller('WeatherController',['$scope', '$http',function($scope,$http) {
             $scope.weather_marker.setMap(null)
          $http({
                  method: "GET",
-                 url: "https://pro.openweathermap.org/data/2.5/forecast?lat="+weather_location.lat+"&lon="+weather_location.lng +"&APPID="+api_key
+                 url: "http://api.openweathermap.org/data/2.5/forecast?lat="+weather_location.lat+"&lon="+weather_location.lng +"&APPID="+api_key
                  }).success(function(data) {
                      console.log("weather:  ",data);
                      $scope.weather_location = data.city;
