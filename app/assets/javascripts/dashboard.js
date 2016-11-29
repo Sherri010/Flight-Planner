@@ -260,7 +260,7 @@ app.controller('MapController',[ '$scope','$http' ,function($scope,$http) {
 
 //PlanController.$inject = ['$http','$scope'];
 ///Plan
-app.controller('PlanController',['$http','$scope', function($scope,$http) {
+app.controller('PlanController',['$scope','$http', function($scope,$http) {
   //getting user
   var user = document.getElementById('user').getAttribute("value");
   $scope.save_flag=false;
