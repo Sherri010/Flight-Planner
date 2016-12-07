@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   #  protect_from_forgery unless: -> { request.format.json? }
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_filter :allow_iframe_requests
   # private
   #   def authenticate
   #       authenticate_or_request_with_http_token do |token, options|
@@ -24,7 +25,9 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
       "/dashboard"
     end
-
+    def allow_iframe_requests
+      response.headers.delete('X-Frame-Options')
+    end
 
   protected
 
