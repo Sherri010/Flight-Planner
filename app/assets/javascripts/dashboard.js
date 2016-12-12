@@ -132,6 +132,29 @@ app.controller('MapController',[ '$scope','$http' ,function($scope,$http) {
             flightPath_list.push(flightPath);
         });
 
+
+        $scope.$on("flightapp:formLatLng",function(event,lat,lng){
+
+            $scope.coordinates.push({lat:lat,lng:lng});
+             new_marker = new google.maps.Marker({
+               position: {lat:lat,lng:lng},
+               map: map
+             });
+           $scope.marker_list.push(new_marker);
+          calcDistance("add_new_marker");
+
+
+
+         var flightPath = new google.maps.Polyline({
+              path: $scope.coordinates,
+              geodesic: true,
+              strokeColor: '#ff0000',
+              strokeOpacity: 1.0,
+              strokeWeight: 4
+          });
+          flightPath.setMap(map);
+          flightPath_list.push(flightPath);
+        });
         $scope.$on("flightapp:resetMap",function(){
                initMap();
                $scope.marker_list =[];
