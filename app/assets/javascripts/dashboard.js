@@ -1,3 +1,4 @@
+//services
 var app = angular.module("flightApp", ["ui.router"]);
 
 
@@ -317,6 +318,13 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
       alert("name the route");
     }
  }
+
+   $scope.getUserData = function(){
+      if($scope.in_lng && $scope.in_lat){
+        $scope.$emit("flightapp:formLatLng",$scope.in_lat,$scope.in_lng);
+        $scope.save_flag=true;
+      }
+     }
 
  $scope.calcSpeed = function(){
     var mph = $scope.speed * 1.152;
