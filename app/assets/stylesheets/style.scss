@@ -5,12 +5,13 @@ html, body {
   font-family: 'Lato', sans-serif;
 }
 .wrapper{
-  background:url('images/landing.jpg') no-repeat;
+  background-image: url(image_path('landing.jpg'));
   background-size:cover;
   height:100vh;
   margin:0px;
   padding:0px;
 }
+
 h1 {margin:0px;}
 a.signup{
    margin:10px;
@@ -140,12 +141,4 @@ a.brand-logo {
   font-size: 14px;
   padding:5px;
   text-decoration: underline;
-}
-.location-fields{
-  width:30%;
-}
-.speed_box{
-  padding:2%;
-  margin:0 auto;
-  border:1px solid grey;
 }
