@@ -18,14 +18,16 @@
      </tr>
     </tbody>
   </table>
+  
     <div class="location-fields">
-    <input type="number" name="lat" placeholder="Enter lat" ng-model="in_lat">
-    <input type="number" name="lng" placeholder="Enter lng" ng-model="in_lng">
-    <a class="waves-effect waves-light btn  blue-grey darken-3 plan_time"  ng-click="getUserData();">Add Location</a>
-  </div>
+      <span> Lat:</soan>
+      <input type="number" name="lat" class="location_input" placeholder="Enter lat" ng-model="in_lat">
+      <span> Lng:</soan>
+      <input type="number" name="lng" class="location_input" placeholder="Enter lng" ng-model="in_lng">
+      <a class="waves-effect waves-light btn  blue-grey darken-3 location_submit" ng-click="getUserData();"> + </a>
+    </div>
 </div>
 <div ng-show="save_flag" class="container">
-    <hr>
     <span> Total: </span> <span>{{totalDistance}} m</span>
   <div>
     <span> Speed:</soan>

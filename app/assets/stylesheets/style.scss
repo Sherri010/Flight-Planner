@@ -143,5 +143,19 @@ a.brand-logo {
   text-decoration: underline;
 }
 .location-fields{
-  width:30%;
+  padding-top:30px;
+  padding-bottom:10px;
+  width:90%;
+  margin:20px;
+  border-top:1px solid #fff;
+}
+
+.location_input{
+ display: inline-block;
+ margin-right:20px;
+ max-width:150px;
+}
+.location_submit{
+  max-width:150px;
+ float:right;
 }
