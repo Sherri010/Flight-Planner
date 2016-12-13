@@ -18,21 +18,22 @@
      </tr>
     </tbody>
   </table>
-  
     <div class="location-fields">
-      <span> Lat:</soan>
+      <span><b>Lat:</b></soan>
       <input type="number" name="lat" class="location_input" placeholder="Enter lat" ng-model="in_lat">
-      <span> Lng:</soan>
+      <span><b>Lng:</b></soan>
       <input type="number" name="lng" class="location_input" placeholder="Enter lng" ng-model="in_lng">
-      <a class="waves-effect waves-light btn  blue-grey darken-3 location_submit" ng-click="getUserData();"> + </a>
+      <a class="waves-effect waves-light btn  blue-grey darken-3 location_submit" title="Add location to table" ng-click="getUserData();"> + </a>
     </div>
 </div>
-<div ng-show="save_flag" class="container">
-    <span> Total: </span> <span>{{totalDistance}} m</span>
-  <div>
-    <span> Speed:</soan>
-    <input type="number" min="1" id="speed_input" placeholder="Enter Speed in Knot" ng-model="speed"> <span> Time:{{travelTime}} </span>
-    <a class="waves-effect waves-light btn  blue-grey darken-3 plan_time"  ng-click="calcSpeed();"> Calculate travel time</a> <br>
+<div ng-show="save_flag" class="location-fields">
+  <p style="text-align:center;"> Total Distance & Time</p>
+    <span><b> Total Distance:  </b> </span> <span>{{totalDistance}} m</span>
+    <div>
+    <span><b>Speed:  </b></soan>
+    <input type="number" min="1" id="speed_input" placeholder="Enter Speed in Knot" ng-model="speed">
+    <span><b>Time:  </b>{{travelTime}} hr</span>
+    <a class="waves-effect waves-light btn  blue-grey darken-3 location_submit" title="Calculate Travel Time"  ng-click="calcSpeed();"><i class="material-icons">av_timer</i></a> <br>
   </div>
 </div>
 <div style="text-align:center;">
