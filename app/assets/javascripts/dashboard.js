@@ -134,16 +134,14 @@ app.controller('MapController',[ '$scope','$http' ,function($scope,$http) {
 
 
         $scope.$on("flightapp:formLatLng",function(event,lat,lng){
-
             $scope.coordinates.push({lat:lat,lng:lng});
              new_marker = new google.maps.Marker({
                position: {lat:lat,lng:lng},
+               label: $scope.labels[$scope.labelIndex++ % $scope.labels.length],
                map: map
              });
            $scope.marker_list.push(new_marker);
-          calcDistance("add_new_marker");
-
-
+           calcDistance("add_new_marker");
 
          var flightPath = new google.maps.Polyline({
               path: $scope.coordinates,
@@ -346,6 +344,8 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
       if($scope.in_lng && $scope.in_lat){
         $scope.$emit("flightapp:formLatLng",$scope.in_lat,$scope.in_lng);
         $scope.save_flag=true;
+      } else{
+        alert("Please enter lat and lng before adding to table.")
       }
      }
 
