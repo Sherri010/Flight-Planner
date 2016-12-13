@@ -159,3 +159,11 @@ a.brand-logo {
   max-width:150px;
  float:right;
 }
+@media (max-width: 500px) {
+  .plan_button{
+    display: block;
+    width:80%;
+    margin:10px;
+
+  }
+}
