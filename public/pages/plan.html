@@ -28,7 +28,7 @@
 </div>
 <div ng-show="save_flag" class="location-fields">
   <p style="text-align:center;"> Total Distance & Time</p>
-    <span><b> Total Distance:  </b> </span> <span>{{totalDistance}} m</span>
+    <span><b> Total Distance:  </b> </span> <span>{{totalDistance}} miles</span>
     <div>
     <span><b>Speed:  </b></soan>
     <input type="number" min="1" id="speed_input" placeholder="Enter Speed in Knot" ng-model="speed">
@@ -41,4 +41,5 @@
   <a href="" class="waves-effect waves-light teal darken-3 btn plan_button"  ng-click="clearMarkerAndPoly(null,'actions');">Clear Table</a>
   <a class="waves-effect waves-light btn plan_button teal darken-1" ng-click="refreshMap();"> Reset Map </a>
 </div>
-<h5 ng-show="success_save"> New Route Saved Successfully </h5>
+<p class="green_alert" ng-show="success_save"> New Route Saved Successfully </p>
+<p class="red_alert"  ng-show="error_save"> Oops!Something went wrong, please try again!</p>

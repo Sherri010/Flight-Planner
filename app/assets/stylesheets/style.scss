@@ -159,6 +159,16 @@ a.brand-logo {
   max-width:150px;
  float:right;
 }
+.green_alert{
+  color:#81c784;
+  text-align: center;
+  font-size: 18px;
+}
+.red_alert{
+  color:#b71c1c;
+  text-align: center;
+  font-size: 18px;
+}
 @media (max-width: 500px) {
   .plan_button{
     display: block;

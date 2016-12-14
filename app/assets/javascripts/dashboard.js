@@ -71,10 +71,11 @@ app.controller('MapController',[ '$scope','$http' ,function($scope,$http) {
           dist = dist * 180/Math.PI
           dist = dist * 60 * 1.1515
           //if (unit=="K") { dist = dist * 1.609344 }
-           //if (unit=="N") { dist = dist * 0.8684 }
+          //if (unit=="N") { dist = dist * 0.8684 }
           dist= dist *  0.8684;
-           $scope.distances.push(dist.toFixed(3));
-           $scope.totalDistance += dist;
+          $scope.distances.push(dist.toFixed(3));
+          $scope.totalDistance += dist;
+          $scope.totalDistance=$scope.totalDistance;
        }
        if(source == "add_new_marker"){
         coor.push($scope.coordinates[$scope.coordinates.length-2].lat);
@@ -291,7 +292,7 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
   $scope.route ={};
   $scope.speed;
   $scope.travelTime;
-
+  $scope.error_save=false;
  // listening for any changes on the marker list and updating the view
   $scope.$on("flightapp:newmarker", function(event,data) {
      $scope.$apply(function () {
@@ -326,14 +327,16 @@ app.controller('PlanController',['$scope','$http', function($scope,$http) {
                         node:$scope.coordinates
                   }
                 }).success(function(data) {
-                     alert("SUCCESS");
                      $scope.save_flag=false;
                      $scope.success_save=true;
+                     $scope.error_save=false;
                 }).error(function() {
-                    alert("Error saving nodes!");
+                    $scope.error_save=true;
+                    $scope.success_save=false;
                 });
        }).error(function() {
-           alert("Error saving route!");
+           $scope.error_save=true;
+           $scope.success_save=false;
        });
     }else {
       alert("name the route");
